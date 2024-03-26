@@ -1,38 +1,193 @@
-.App {
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav a {
   color: white;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+nav a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Product and Cart Styling */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product {
+  flex: 0 1 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product h2, .cart-item h3 {
+  margin: 0 0 10px 0;
+  color: #007bff;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.cart-item img {
+  width: 100px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+/* Forms */
+input[type="text"], input[type="email"], input[type="number"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* Center align 'View All Products' link */
+.view-all-products {
+  text-align: center;
+  display: block;
+  margin-top: 20px;
+}
+
+.home-page, .view-all-products {
+  text-align: center;
+  margin: auto;
+}
+
+.home-page {
+  display: block;
+  width: 100%;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .container {
+    width: auto;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product, .cart-item {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product img, .cart-item img {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
